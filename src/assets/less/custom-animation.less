@@ -1,0 +1,152 @@
+/*
+ * @Description: 自定义动画库
+ * @Author: LiuZhen
+ * @Date: 2018-07-12 11:30:12
+ * @Last Modified by: LiuZhen
+ * @Last Modified time: 2018-08-07 11:46:26
+ */
+
+// 淡入
+@-webkit-keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
+}
+
+.uoko-fadeIn {
+  -webkit-animation: fadeIn .3s;
+  animation: fadeIn .3s;
+}
+
+// 淡出
+@-webkit-keyframes fadeOut {
+  from {
+    opacity: 1;
+  }
+
+  to {
+    opacity: 0;
+  }
+}
+
+@keyframes fadeOut {
+  from {
+    opacity: 1;
+  }
+
+  to {
+    opacity: 0;
+  }
+}
+
+.uoko-fadeOut {
+  -webkit-animation: fadeOut .3s;
+  animation: fadeOut .3s;
+}
+
+/* login页动画 */
+@-webkit-keyframes login-fadein-down {
+  from {
+    opacity: 0;
+    -webkit-transform: translate3d(-50%, -60%, 0);
+    transform: translate3d(-50%, -60%, 0);
+  }
+
+  to {
+    opacity: 1;
+    -webkit-transform: translate3d(-50%, -50%, 0);
+    transform: translate3d(-50%, -50%, 0);
+  }
+}
+
+@keyframes login-fadein-down {
+  from {
+    opacity: 0;
+    -webkit-transform: translate3d(-50%, -60%, 0);
+    transform: translate3d(-50%, -60%, 0);
+  }
+
+  to {
+    opacity: 1;
+    -webkit-transform: translate3d(-50%, -50%, 0);
+    transform: translate3d(-50%, -50%, 0);
+  }
+}
+
+@-webkit-keyframes fadeInDown {
+  from {
+    opacity: 0;
+    -webkit-transform: translate3d(0, -100%, 0);
+    transform: translate3d(0, -100%, 0);
+  }
+
+  to {
+    opacity: 1;
+    -webkit-transform: translate3d(0, 0, 0);
+    transform: translate3d(0, 0, 0);
+  }
+}
+
+@keyframes fadeInDown {
+  from {
+    opacity: 0;
+    -webkit-transform: translate3d(0, -100%, 0);
+    transform: translate3d(0, -100%, 0);
+  }
+
+  to {
+    opacity: 1;
+    -webkit-transform: translate3d(0, 0, 0);
+    transform: translate3d(0, 0, 0);
+  }
+}
+
+.uoko-fadeInDown {
+  -webkit-animation-name: fadeInDown;
+  animation-name: fadeInDown;
+}
+
+/* 元素旋转动画，90度 */
+.rotateL {
+  -webkit-animation: rotateLeft .3s linear forwards;
+  animation: rotateLeft .3s linear forwards;
+}
+
+.rotateR {
+  -webkit-animation: rotateRight .3s linear forwards;
+  animation: rotateRight .3s linear forwards;
+}
+
+@-webkit-keyframes rotateLeft {
+  0% { -webkit-transform: rotate(0deg); }
+  100% { -webkit-transform: rotate(90deg); }
+}
+
+@keyframes rotateLeft {
+  0% { -webkit-transform: rotate(0deg); }
+  100% { -webkit-transform: rotate(90deg); }
+}
+
+@-webkit-keyframes rotateRight {
+  0% { -webkit-transform: rotate(90deg); }
+  100% { -webkit-transform: rotate(0deg); }
+}
+
+@keyframes rotateRight {
+  0% { -webkit-transform: rotate(90deg); }
+  100% { -webkit-transform: rotate(0deg); }
+}
