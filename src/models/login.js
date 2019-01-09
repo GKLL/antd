@@ -1,15 +1,14 @@
-
+import { login } from '@/services/login';
 export default {
 
-  namespace: 'example',
+  namespace: 'login',
 
   state: {
-    list: [],
-    isOpen: false, // 图片查看器是否打开
-    index: 0, // 初始显示图片序号
-    picView: false, // 是否全屏显示图片
-    picIndex: 0, // 显示的图片索引
-
+    mobile: '',
+    registerSource: 1,
+    verificationCode: '',
+    isPhoneError: false,
+    isCodeError: false,
   },
 
   subscriptions: {
@@ -18,25 +17,61 @@ export default {
   },
 
   effects: {
-    *fetch({ payload }, { call, put }) {  // eslint-disable-line
-      yield put({ type: 'save' });
-    },
-    *changeViewer({ payload }, { call, put }) {  // eslint-disable-line
+    *changePhoneError({ payload }, { put }) {  // eslint-disable-line
       yield put({ 
-        type: 'changeViewerSuccess',
+        type: 'changePhoneErrorrSuccess',
         payload: {
-          picView: payload.picView,
-          picIndex: payload.picIndex
+          isPhoneError: payload.isPhoneError,
         } 
       });
     },
+    *changeCodeError({ payload }, { put }) {  // eslint-disable-line
+      yield put({ 
+        type: 'changeCodeErrorrSuccess',
+        payload: {
+          isCodeError: payload.isCodeError,
+        } 
+      });
+    },
+    *changeValue({ payload }, { put }) {  // eslint-disable-line
+      yield put({ 
+        type: 'changeValueSuccess',
+        payload: {
+          mobile: payload.mobile,
+        } 
+      });
+    },
+    *changeCode({ payload }, { put }) {  // eslint-disable-line
+      yield put({ 
+        type: 'changeCodeSuccess',
+        payload: {
+          verificationCode: payload.verificationCode,
+        } 
+      });
+    },
+    *login({ payload }, { call, put }) {
+      try {
+        const { data } = yield call(login, payload);
+        if (data && data.code === '000') {
+          console.log(data)
+        }
+      } catch (err) {
+        throw err || 'new error!';
+      }
+    }
   },
 
   reducers: {
-    save(state, action) {
+    changeValueSuccess(state, action) {
       return { ...state, ...action.payload };
     },
-    changeViewerSuccess(state, action) {
+    changePhoneErrorrSuccess(state, action) {
+      return { ...state, ...action.payload };
+    },
+    changeCodeErrorrSuccess(state, action) {
+      return { ...state, ...action.payload };
+    },
+    changeCodeSuccess(state, action) {
       return { ...state, ...action.payload };
     },
   },

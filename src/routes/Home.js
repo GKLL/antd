@@ -4,7 +4,7 @@ import styles from './Home.less';
 import { Flex } from 'antd-mobile';
 import HrTitle from '@/components/HrTitle';
 import ViewTitle from '@/components/ViewTitle';
-function IndexPage({dispatch, location }) {
+function IndexPage({dispatch, location,example }) {
   const imgs = {
     homeBg: require('../assets/images/home_bg.jpg'),
     lock: require('../assets/images/smart_lock.jpg'),
