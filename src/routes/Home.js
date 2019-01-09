@@ -3,7 +3,8 @@ import { connect } from 'dva';
 import styles from './Home.less';
 import { Flex } from 'antd-mobile';
 import HrTitle from '@/components/HrTitle';
-function IndexPage({dispatch, example}) {
+import ViewTitle from '@/components/ViewTitle';
+function IndexPage({dispatch, location }) {
   const imgs = {
     homeBg: require('../assets/images/home_bg.jpg'),
     lock: require('../assets/images/smart_lock.jpg'),
@@ -42,13 +43,15 @@ const Products = () => {
   )
 }
   return (
-    <div className={styles.normal}>
-      <HrTitle title="uoko星空产品服务群"/>
-      <Products />
-      <section className={styles.HrTitle}>
-        <HrTitle title="优客逸家" dec="连续4年最具影响力品牌" />
-      </section>
-    </div>
+    <ViewTitle {...location}>
+      <div className={styles.normal}>
+        <HrTitle title="uoko星空产品服务群"/>
+        <Products />
+        <section className={styles.HrTitle}>
+          <HrTitle title="优客逸家" dec="连续4年最具影响力品牌" />
+        </section>
+      </div>
+    </ViewTitle>
   );
 }
 

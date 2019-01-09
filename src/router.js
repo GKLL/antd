@@ -3,30 +3,9 @@ import { Router, Route, Switch, routerRedux  } from 'dva/router';
 import PropTypes from 'prop-types';
 import dynamic from 'dva/dynamic';
 import { routes } from '@/common/router';
-import ViewTitle from '@/components/ViewTitle';
 const {ConnectedRouter} = routerRedux;
 
-// const ViewWithMeta = props => (
-//   <Helmet>
-//     <title>{props.title}</title>
-//     {props.metas && props.metas.length
-//       ? props.metas.map((m, index) => <meta key={index} {...m} />)
-//       : null}
-//   </Helmet>
-// )
-// const ViewWithMeta = props => (
-//   <React.Fragment>
-//     <ViewWithMeta {...props} />
-//     <props.component {...props} />
-//   </React.Fragment>
-// )
-const setTitle = (title) => {
-  document.title = title
-};
-
 const Routers = ({ history, app }) => {
-
-
   return (
     // <ViewTitle routes={routes} history={history.location}>
       <ConnectedRouter history={history}>
@@ -48,7 +27,6 @@ const Routers = ({ history, app }) => {
           </Switch>
         </Router>
       </ConnectedRouter>
-    // </ViewTitle>
   )
 }
 
