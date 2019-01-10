@@ -1,8 +1,7 @@
 import fetch from 'dva/fetch';
 import conf from '@/config/config';
-console.log(conf)
 const config = {
-  baseURL:(conf==='development') ? 'http://api.xx.com/' : 'http://api.xxx.com/',
+  baseURL:(conf==='development') ? 'http://front-end.testuoko.com:3000/mock/22' : 'http://api.xxx.com/',
   timeout:10000
 }
 
@@ -29,8 +28,8 @@ function parseJSON(response) {
 }
 
 function checkStatus(response) {
-  if (response >= 200 && response < 300) {
-    return true;
+  if (response.status >= 200 && response.status < 300) {
+    return response;
   }
 
   const errortext = codeMessage[response];
@@ -52,16 +51,16 @@ function checkStatus(response) {
  * @return {object}           An object containing either "data" or "err"
  */
 export default function request(url, options) {
+  let baseURL = config.baseURL + url;
   const opt = {
     ...options,
-    'Accept': 'application/json',
     'Content-Type': 'application/json; charset=utf-8',
-    'headers': ''
   }
-  let baseURL = config.baseURL + url
+  
+  
   return fetch(baseURL, opt)
     .then(checkStatus)
     .then(parseJSON)
     .then(data => ({ data }))
-    .catch(err => ({ err }));
+    // .catch(err => ({ err }));
 }

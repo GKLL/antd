@@ -4,7 +4,7 @@
   min-height: 100%;
   .header {
     font-size: 34px;
-    padding: .693333rem 0 .96rem 0.96rem;
+    padding: .693333rem 0 .96rem 0;
   }
   .info {
     font-size: 12px;
@@ -13,22 +13,50 @@
       color: @color-golden;
       padding-bottom: 10px;
     }
-    
   }
   .Input {
     background: #f8f8f8;
     input {
       background:#f8f8f8;
+      
     }
   }
   .codeInfo {
     font-size: 12px;
     padding-top: 20px;
+    padding-bottom: 10px;
     span {
       display: inline-block;
       color: @color-golden;
-      padding-bottom: 10px;
+    }
+  }
+  .InputCode {
+    background: #f8f8f8;
+    input {
+      background:#f8f8f8;
       
     }
+  }
+  .codeBtn {
+    background: @border-color-default;
+    color: #fff;
+    font-size: 14px;
+  }
+  .activeBtn {
+    background: @color-golden;
+    color: #fff;
+    font-size: 14px;
+  }
+  .loginBtn {
+    background: @border-color-default;
+    color: #fff;
+    font-size: 16px;
+    margin-top: 1.066667rem;
+  }
+  .loginActiveBtn {
+    background: @color-golden;
+    color: #fff;
+    font-size: 16px;
+    margin-top: 1.066667rem;
   }
 }
