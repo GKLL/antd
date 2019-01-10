@@ -17,12 +17,17 @@ const routes = [
     title: '登录'
   },
   {
+		path: '/trustOnline',
+    component: () => import('@/routes/TrustOnline'),
+    title: '在线委托'
+	},
+  {
 		path: '',
     component: () => import('@/routes/Auth/404'),
     title: '404'
-	}
+	},
 ]
 
 export {
-    routes
+	routes
 }
