@@ -3,7 +3,7 @@
   text-align: center;
   h3{
     font-size: 18px;
-    padding: 1.333333rem 0 .266667rem;
+    padding: .666667rem 0 .266667rem;
   }
   span{
     font-size: 12px;
@@ -15,15 +15,49 @@
 .form{
   background-color: #fff;
   border-radius: .266667rem;
-  margin: .8rem .8rem 0;
+  margin: .4rem .4rem 0;
   .flexForm{
-    padding: .64rem .533333rem;
+    padding: .32rem .266667rem;
     label{
       font-size: 14px;
-      width: 4.533333rem;
-      height: 1.333333rem;
-      line-height: 1.333333rem;
+      font-family: 'PingFang-SC-Bold';
+      width: 2.266667rem;
+      height: .666667rem;
+      line-height: .666667rem;
       border-right: 1px solid #eeeeee;
     }
+  }
+}
+.codeBtn{
+  font-size: 14px;
+  color: #B8B8B8;
+  &::before{
+    border: none;
+  }
+  &.active{
+    color: #C3AA82;
+  }
+}
+.submitBtn{
+  margin-top: .6rem;
+  height: 1.306667rem;
+  border-radius: 0;
+  color: #FFFFFF;
+  background: #D8D8D8;
+  &.active{
+    background: #C3AA82;
+  }
+}
+.am-button{
+  height: .666667rem;
+  line-height: .666667rem;
+  &::before{
+    border: none;
+  }
+}
+.am-list-item{
+  min-height: .666667rem;
+  &.am-input-item{
+    height: .666667rem;
   }
 }
